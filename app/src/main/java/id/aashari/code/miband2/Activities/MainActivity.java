@@ -174,7 +174,7 @@ public class MainActivity extends Activity {
     void startVibrate() {
         BluetoothGattCharacteristic bchar = bluetoothGatt.getService(CustomBluetoothProfile.AlertNotification.service)
                 .getCharacteristic(CustomBluetoothProfile.AlertNotification.alertCharacteristic);
-        bchar.setValue(new byte[]{2});
+        bchar.setValue(new byte[]{-1, 10, 0, 10, 3});
         if (!bluetoothGatt.writeCharacteristic(bchar)) {
             Toast.makeText(this, "Failed start vibrate", Toast.LENGTH_SHORT).show();
         }
